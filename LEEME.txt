@@ -1,0 +1,22 @@
+Lúmina - Módulo de clientes con JDBC (AA2-EV01)
+
+Contenido
+- src/       Código Java. Paquetes: com.lumina.conexion, modelo, dao y app.
+- sql/       Script lumina_db.sql para crear la base de datos y la tabla.
+- lib/       Aquí va el conector de MySQL (mysql-connector-j-X.jar).
+
+Requisitos
+- JDK 17 o superior, MySQL (o XAMPP) y el conector JDBC de MySQL.
+
+Pasos
+1. Ejecutar sql/lumina_db.sql en MySQL (phpMyAdmin o consola).
+2. Descargar mysql-connector-j desde https://dev.mysql.com/downloads/connector/j/
+   y copiar el .jar en la carpeta lib.
+3. Si tu usuario o contraseña de MySQL son distintos, cambiarlos en
+   src/com/lumina/conexion/ConexionBD.java.
+4. Compilar y ejecutar (Windows):
+   javac -d out -cp "lib/*" src/com/lumina/conexion/ConexionBD.java src/com/lumina/modelo/Cliente.java src/com/lumina/dao/ClienteDAO.java src/com/lumina/app/Main.java
+   java -cp "out;lib/*" com.lumina.app.Main
+   (También se puede abrir la carpeta en NetBeans, Eclipse o IntelliJ y agregar el .jar a las librerías.)
+
+Funciones: registrar (INSERT), listar y buscar (SELECT), actualizar (UPDATE) y eliminar (DELETE) clientes.
